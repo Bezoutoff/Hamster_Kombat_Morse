@@ -4,8 +4,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # Define durations
 DOT_DURATION = 0.1  # Duration of a dot
-DASH_DURATION = 0.2  # Duration of a dash
-LETTER_PAUSE = 0.8  # Pause between letters
+DASH_DURATION = 0.6  # Duration of a dash
+LETTER_PAUSE = 4  # Pause between letters
 
 # Create Morse code dictionary
 MORSE_CODE_DICT = {
@@ -21,12 +21,12 @@ MORSE_CODE_DICT = {
 }
 
 def click_dot(element, driver):
-    ActionChains(driver).move_to_element_with_offset(element, random.uniform(0, element.size['width'] * 0.5), random.uniform(0, element.size['height'] * 0.5)).click().perform()
+    ActionChains(driver).move_to_element_with_offset(element, random.uniform(0, element.size['width'] * 0.3), random.uniform(0, element.size['height'] * 0.3)).click().perform()
     time.sleep(DOT_DURATION)
 
 def click_dash(element, driver):
     action = ActionChains(driver)
-    action.move_to_element_with_offset(element, random.uniform(0, element.size['width'] * 0.5), random.uniform(0, element.size['height'] * 0.5))
+    action.move_to_element_with_offset(element, random.uniform(0, element.size['width'] * 0.3), random.uniform(0, element.size['height'] * 0.3))
     action.click_and_hold().perform()
     time.sleep(DASH_DURATION)
     action.release().perform()
