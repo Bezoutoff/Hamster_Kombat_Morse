@@ -19,7 +19,7 @@ for _ in range(3):
   morse_mode.click()
   time.sleep(.5)
 print("Entered morse mode!")
-time.sleep(3)
+time.sleep(4)
 
 
 # Example usage
@@ -27,7 +27,7 @@ message = "WEB3"
 click_morse_code(element, message, driver)
 
 time.sleep(2)
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 20)
 element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__nuxt"]/div/div[4]/div/div[7]/button/span')))
 element.click()
 print("Claim 1k for solving the morse!")
