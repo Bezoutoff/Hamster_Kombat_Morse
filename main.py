@@ -29,6 +29,7 @@ attempts = 0
 
 while attempts < max_attempts:
     click_morse_code(element, message, driver)
+    time.sleep(1)  # Adjust this duration if necessary
 
     try:
         # Wait for the confirmation element to appear
@@ -45,12 +46,7 @@ while attempts < max_attempts:
 if attempts == max_attempts:
     print("Max attempts reached. Confirmation element not found.")       
 
-time.sleep(2)
-wait = WebDriverWait(driver, 20)
-element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="__nuxt"]/div/div[4]/div/div[7]/button/span')))
-element.click()
-print("Claim 1k for solving the morse!")
-time.sleep(2)
+time.sleep(3)
 
 # Close the driver after completion
 driver.quit()
