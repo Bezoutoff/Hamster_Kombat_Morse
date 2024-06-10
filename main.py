@@ -24,7 +24,26 @@ time.sleep(4)
 
 # Example usage
 message = "WEB3"
-click_morse_code(element, message, driver)
+max_attempts = 5
+attempts = 0
+
+while attempts < max_attempts:
+    click_morse_code(element, message, driver)
+
+    try:
+        # Wait for the confirmation element to appear
+        confirm_wait = WebDriverWait(driver, 20)
+        confirm_element = confirm_wait.until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="__nuxt"]/div/div[4]/div/div[7]/button/span'))
+        )
+        confirm_element.click()
+        break  # Break the loop if the confirmation element is found and clicked
+    except TimeoutException:
+        attempts += 1
+        print(f"Attempt {attempts} failed: Confirmation element not found, retrying Morse code clicks...")
+
+if attempts == max_attempts:
+    print("Max attempts reached. Confirmation element not found.")       
 
 time.sleep(2)
 wait = WebDriverWait(driver, 20)
