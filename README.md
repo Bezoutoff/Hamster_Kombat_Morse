@@ -7,7 +7,7 @@ Automatically resolves Morse to Selenium for Hamster Kombat
 ### Install Required Libraries
 
 Ensure you have Selenium installed. You can install it using the following command:
-```bash
+
 pip install selenium
 
 ### Create `morse_clicker.py`
