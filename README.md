@@ -1,6 +1,7 @@
 # Hamster_Kombat_Morse
 
 Automatically resolves Morse to Selenium for Hamster Kombat
+<a href="https://imgflip.com/gif/8tcqyv">via Imgflip</a>
 
 ## Detailed Instructions
 
