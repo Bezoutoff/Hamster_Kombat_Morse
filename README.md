@@ -9,9 +9,11 @@ Create morse_clicker.py:
 
 This file contains functions for clicking elements in Morse code using the selenium library.
 Functions:
+
 click_dot(element, driver): Simulates a dot click on the element.
 click_dash(element, driver): Simulates a dash click on the element (click and hold).
 click_morse_code(element, message, driver): Converts a message into Morse code and clicks the element accordingly.
+
 Modify main.py:
 
 Import the Morse code clicking function from morse_clicker.py.
